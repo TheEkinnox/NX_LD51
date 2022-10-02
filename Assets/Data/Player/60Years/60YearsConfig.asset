@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cd81f99a0a293489a0f17911f35b72, type: 3}
+  m_Name: 60YearsConfig
+  m_EditorClassIdentifier: 
+  displayName: Retired
+  speed: 4.5
+  health: 8
+  spawnSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  deathFx: {fileID: 0}
+  animController: {fileID: 22100000, guid: f24d026514caf7941baf20ce2ef21483, type: 2}
+  abilities: []

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cd81f99a0a293489a0f17911f35b72, type: 3}
+  m_Name: NewBornConfig
+  m_EditorClassIdentifier: 
+  displayName: New Born
+  speed: 9
+  health: 1
+  spawnSound: {fileID: 8300000, guid: b7af54b1bfd5d924199c6c5aef428aa7, type: 3}
+  deathSound: {fileID: 8300000, guid: 073e12282f737cf4996fe2c4de846d3b, type: 3}
+  animController: {fileID: 9100000, guid: 5120cac2a469d6244a4c87311c19d60b, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: 7af689930de3415429ab78f49143fe3c, type: 2}

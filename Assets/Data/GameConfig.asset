@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e2906f0a711e14aae553e6cd7d9e6a, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  secPerPlayerConf: 10
+  rejuvenateCount: 3
+  ageStep: 10
+  playerConfigs:
+  - {fileID: 11400000, guid: 8166157670a2c9f4091f285eb86d329c, type: 2}
+  - {fileID: 11400000, guid: bf7274dde6445fa44b3cb4e6dabcdc8b, type: 2}
+  - {fileID: 11400000, guid: 05817c3d14d986442913f92359d210fb, type: 2}
+  - {fileID: 11400000, guid: 0256025d265e6d4488049b78b5f4d8a7, type: 2}
+  - {fileID: 11400000, guid: dfd5377a9bbccf34cbd0ce40e6a076e6, type: 2}
+  - {fileID: 11400000, guid: 6af30034814d5764cb825be445292be3, type: 2}
+  - {fileID: 11400000, guid: 3f52b4dab087aae45af9ebc21f573625, type: 2}
+  - {fileID: 11400000, guid: 0fac2e32df3d72f4294208c3750b73f4, type: 2}
+  - {fileID: 11400000, guid: bda8f73facd9c4849a210668250ad723, type: 2}
+  - {fileID: 11400000, guid: 8386c6839d90b3e4a98f34a23ab4f21f, type: 2}
