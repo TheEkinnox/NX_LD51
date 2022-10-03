@@ -5,8 +5,9 @@ namespace Assets.Scripts
 {
 
     [CreateAssetMenu(fileName = "PlayerConfig", menuName = "Custom/PlayerConfig", order = 2)]
-    public class PlayerConfig : ScriptableObject
+    public class CharacterConfig : ScriptableObject
     {
+        public GameObject prefab;
         public string displayName;
         public float speed;
         public int health;

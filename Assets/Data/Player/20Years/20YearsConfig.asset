@@ -19,4 +19,6 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 9d55701d9b939e64e8b31e77d10e700a, type: 3}
   deathFx: {fileID: 0}
   animController: {fileID: 22100000, guid: 0c9bc7cbbadaa984098f3acfc93db6df, type: 2}
-  abilities: []
+  abilities:
+  - {fileID: 11400000, guid: 4ed6f81fe824d264d8ae1386ee9eb097, type: 2}
+  - {fileID: 11400000, guid: 6843177dbe6fef641abe7d4ceb6bc81c, type: 2}

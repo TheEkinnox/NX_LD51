@@ -21,3 +21,4 @@ MonoBehaviour:
   animController: {fileID: 22100000, guid: de2c3c303f2c3d243973c71c3696cf16, type: 2}
   abilities:
   - {fileID: 11400000, guid: c4d4b666159cdf64892c60f4fd42b8a1, type: 2}
+  - {fileID: 11400000, guid: 061dc92b1de4ff24caf8a60fc07cdd05, type: 2}

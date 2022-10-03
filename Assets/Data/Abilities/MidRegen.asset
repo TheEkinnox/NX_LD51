@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708b078330a96fd45b57509f357b9579, type: 3}
   m_Name: MidRegen
   m_EditorClassIdentifier: 
-  coolDown: 2
+  sfx: {fileID: 0}
+  coolDown: 3
   isPassive: 1
-  health: 2
+  health: 1

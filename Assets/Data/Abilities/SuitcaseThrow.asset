@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10f074f14d2d0aa4d88e8b40ff0bda1c, type: 3}
-  m_Name: SuitcaseDist
+  m_Name: SuitcaseThrow
   m_EditorClassIdentifier: 
-  sfx: {fileID: 0}
+  sfx: {fileID: 8300000, guid: bff8e2d1178284b4a9696bfa1260c46a, type: 3}
   coolDown: 0.3
+  freezeDuration: 0
   isPassive: 0
   damage: 2
   range: 5
   throwSpeed: 5
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 2915867200287715040, guid: 421b2ef9297ec104eaa571f4786b049d, type: 3}
   breakOnContact: 1
   breakFx: {fileID: 0}

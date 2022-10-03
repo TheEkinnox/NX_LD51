@@ -7,51 +7,46 @@ namespace Assets.Scripts
     {
         public AudioClip sfx;
         public float coolDown = 0;
+        public float freezeDuration = 0;
         public bool isPassive = false;
 
-        protected Player player;
+        protected Character character;
         private float _nextUseTime;
 
-        public void Init(Player player)
+        public void Init(Character character)
         {
-            if (!player)
+            if (!character)
                 throw new ArgumentException($"Tried to initialise ability \"{name}\" with invalid player");
 
-            Debug.Log($"Initialised ability \"{name}\" for player \"{player.name}\"");
+            Debug.Log($"Initialised ability \"{name}\" for player \"{character.name}\"");
 
-            this.player = player;
+            this.character = character;
             _nextUseTime = 0;
         }
 
         public void Disable()
         {
-            player = null;
+            character = null;
         }
 
         public virtual bool Use()
         {
-            if (!player || player.IsDead || player.IsAging || Time.time < _nextUseTime)
+            if (!character || character.IsDead || Time.time < _nextUseTime || (character is Player player && player.IsAging))
                 return false;
 
             if (!isPassive)
-                player.Animator.SetTrigger(AnimVars.Ability);
+                character.Animator.SetTrigger(AnimVars.Ability);
 
             if (sfx)
-                player.AudioSource.PlayOneShot(sfx);
+                character.AudioSource.PlayOneShot(sfx);
 
             _nextUseTime = Time.time + coolDown;
 
-            Debug.Log($"Player \"{player.name}\" used ability \"{name}\"");
+            if (freezeDuration > 0)
+                character.Freeze(freezeDuration);
+
+            Debug.Log($"Player \"{character.name}\" used ability \"{name}\"");
             return true;
-        }
-
-        public virtual void LateUpdate()
-        {
-            if (!player)
-                return;
-
-            if (isPassive || (!isPassive && Input.GetKeyDown(KeyCode.Space)))
-                Use();
         }
     }
 }

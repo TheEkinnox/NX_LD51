@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cd81f99a0a293489a0f17911f35b72, type: 3}
   m_Name: 30YearsConfig
   m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
   displayName: Gym Bro
   speed: 6
   health: 10
@@ -19,4 +20,5 @@ MonoBehaviour:
   deathSound: {fileID: 0}
   deathFx: {fileID: 0}
   animController: {fileID: 22100000, guid: 9a98a9621df25904d86d3dc760a821ee, type: 2}
-  abilities: []
+  abilities:
+  - {fileID: 11400000, guid: 4afd6011334e7614cb4eda985e1a7b05, type: 2}

@@ -17,7 +17,7 @@ namespace Assets.Scripts
         {
             if (base.Use())
             {
-                player.StartCoroutine(DashCoroutine());
+                character.StartCoroutine(DashCoroutine());
                 return true;
             }
 
@@ -27,19 +27,19 @@ namespace Assets.Scripts
         private IEnumerator DashCoroutine()
         {
             float endTime = Time.time + duration;
-            Vector2 dashVel = player.LastInput.normalized * speed;
+            Vector2 dashVel = character.LastDirection.normalized * speed;
 
             while (Time.time < endTime)
             {
                 if (!isPassive)
-                    player.Rigidbody.velocity = dashVel;
+                    character.Rigidbody.velocity = dashVel;
 
-                if (collisionDamage != 0 && (Mathf.Abs(player.Rigidbody.velocity.x) > 0 || Mathf.Abs(player.Rigidbody.velocity.y) > 0))
+                if (collisionDamage != 0 && (Mathf.Abs(character.Rigidbody.velocity.x) > 0 || Mathf.Abs(character.Rigidbody.velocity.y) > 0))
                 {
-                    int colCount = player.Rigidbody.OverlapCollider(contactFilter, _colliders);
+                    int colCount = character.Rigidbody.OverlapCollider(contactFilter, _colliders);
 
                     for (int i = 0; i < colCount; i++)
-                        if (_colliders[i] && _colliders[i].enabled && _colliders[i].gameObject != player.gameObject)
+                        if (_colliders[i] && _colliders[i].enabled && _colliders[i].gameObject != character.gameObject)
                             _colliders[i].GetComponent<IDamageable>()?.Damage(collisionDamage);
                 }
 

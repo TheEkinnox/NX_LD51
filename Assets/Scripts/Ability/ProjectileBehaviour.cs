@@ -10,7 +10,7 @@ namespace Assets.Scripts
         [SerializeField] private new SpriteRenderer renderer;
 
         private Projectile _ability;
-        private Player _caster;
+        private Character _caster;
 
         private void Awake()
         {
@@ -21,9 +21,9 @@ namespace Assets.Scripts
                 throw new MissingComponentException($"Missing sprite renderer for projectile behaviour \"{name}\"");
         }
 
-        internal void Init(Projectile ability, Player caster)
+        internal void Init(Projectile ability, Character caster)
         {
-            if (ability == null)
+            if (!ability)
                 throw new ArgumentNullException($"Tried to initialize projectile behaviour \"{name}\" with null ability");
 
             if (!caster)
@@ -32,15 +32,15 @@ namespace Assets.Scripts
             _ability = ability;
             _caster = caster;
 
-            Vector3 force = _caster.LastInput * _ability.throwSpeed + (_caster.Rigidbody.velocity * Time.deltaTime);
+            Vector3 force = _caster.LastDirection * _ability.throwSpeed + _caster.Rigidbody.velocity;
 
-            renderer.sortingOrder = _caster.LastInput.y > 0 ? -1 : 1;
+            renderer.sortingOrder = _caster.LastDirection.y > 0 ? -1 : 1;
             rb2d.AddForce(force, ForceMode2D.Impulse);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (_ability != null && _caster && other && other.enabled && other.gameObject != _caster.gameObject)
+            if (_ability && _caster && other && other.enabled && other.gameObject != _caster.gameObject)
             {
                 IDamageable target = other.gameObject.GetComponent<IDamageable>();
 
@@ -49,7 +49,14 @@ namespace Assets.Scripts
 
                 if (_ability.breakOnContact)
                     Destroy(gameObject);
+
+                Debug.Log("Collision");
             }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            OnTriggerEnter2D(collision.otherCollider);
         }
 
         private void OnDestroy()
@@ -59,7 +66,7 @@ namespace Assets.Scripts
 
         private void Break()
         {
-            if (_ability.breakFx)
+            if (_ability && _ability.breakFx)
             {
                 GameObject particle = Instantiate(_ability.breakFx, transform.position, transform.rotation);
                 ParticleSystem[] ps = particle.GetComponentsInChildren<ParticleSystem>();

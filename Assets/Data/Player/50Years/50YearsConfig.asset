@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cd81f99a0a293489a0f17911f35b72, type: 3}
   m_Name: 50YearsConfig
   m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
   displayName: Burned Out
   speed: 3
   health: 5
@@ -19,4 +20,5 @@ MonoBehaviour:
   deathSound: {fileID: 0}
   deathFx: {fileID: 0}
   animController: {fileID: 22100000, guid: 369dcc5b8d50e2e438294ee572a952fb, type: 2}
-  abilities: []
+  abilities:
+  - {fileID: 11400000, guid: f137c04a223cbef4e92858cf97817f8a, type: 2}

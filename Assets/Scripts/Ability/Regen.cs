@@ -11,7 +11,7 @@ namespace Assets.Scripts
         {
             if (base.Use())
             {
-                player.Heal(health);
+                character.Heal(health);
                 return true;
             }
 

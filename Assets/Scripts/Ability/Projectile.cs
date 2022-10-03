@@ -16,9 +16,9 @@ namespace Assets.Scripts
         {
             if (projectilePrefab && base.Use())
             {
-                float angle = Mathf.Atan2(player.LastInput.x, -player.LastInput.y) * Mathf.Rad2Deg;
+                float angle = Mathf.Atan2(character.LastDirection.x, -character.LastDirection.y) * Mathf.Rad2Deg;
 
-                GameObject instance = Instantiate(projectilePrefab, player.ProjectileSpawn.position, Quaternion.Euler(new Vector3(0, 0, angle)));
+                GameObject instance = Instantiate(projectilePrefab, character.ProjectileSpawn.position, Quaternion.Euler(new Vector3(0, 0, angle)));
 
                 ProjectileBehaviour proj = instance.GetComponent<ProjectileBehaviour>();
 
@@ -28,7 +28,7 @@ namespace Assets.Scripts
                     return false;
                 }
 
-                proj.Init(this, player);
+                proj.Init(this, character);
                 Destroy(instance, range / throwSpeed);
 
                 return true;

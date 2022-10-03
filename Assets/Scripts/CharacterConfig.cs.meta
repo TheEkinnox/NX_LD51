@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 03cd81f99a0a293489a0f17911f35b72
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - prefab: {fileID: 3935768667673039690, guid: 435ae0abc7f56474483031032ce565ec, type: 3}
+  - spawnSound: {instanceID: 0}
+  - deathSound: {instanceID: 0}
+  - deathFx: {instanceID: 0}
+  - animController: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

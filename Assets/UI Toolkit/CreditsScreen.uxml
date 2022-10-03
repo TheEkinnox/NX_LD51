@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/styles.uss?fileID=7433441132597879392&amp;guid=36c8238f96653c54aa087980edfe63d9&amp;type=3#styles" />
+    <ui:VisualElement name="Background" class="darkener" style="width: 100%; height: 100%;">
+        <ui:VisualElement name="scroll_area" style="min-height: 100%; align-items: center;">
+            <ui:GroupBox name="Title" style="align-items: center;">
+                <ui:Label text="10 Seconds Old" display-tooltip-when-elided="true" class="Title title" />
+                <ui:VisualElement name="Underline" style="height: 4px; background-color: rgb(44, 168, 29); margin-top: 8px; width: 60%;" />
+            </ui:GroupBox>
+            <ui:Label text="&lt;size=40&gt;&lt;b&gt;~ Game Design ~&lt;/b&gt;&lt;/size&gt;&#10;&#10;Thomas Ridez&#10;Loïck Noa Obiang Ndong&#10;&#10;&lt;size=40&gt;&lt;b&gt;~ Programming ~&lt;/b&gt;&lt;/size&gt;&#10;&#10;Loïck Noa Obiang Ndong&#10;&#10;&lt;size=40&gt;&lt;b&gt;~ UI/UX ~&lt;/b&gt;&lt;/size&gt;&#10;&#10;Loïck Noa Obiang Ndong&#10;Thomas Ridez&#10;&#10;&lt;size=40&gt;&lt;b&gt;~ Art ~&lt;/b&gt;&lt;/size&gt;&#10;&#10;Thomas Ridez&#10;&#10;&lt;size=40&gt;&lt;b&gt;~ Audio ~&lt;/b&gt;&lt;/size&gt;&#10;&#10;Loïck Noa Obiang Ndong&#10;(with the precious help of Bfxr and freesound.org :D)&#10;&#10;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n&#10;&#10;&lt;color=#2CA81D&gt;&lt;size=60&gt;&lt;b&gt;Thank you for playing!&lt;/b&gt;&lt;/size&gt;&lt;/color&gt;" display-tooltip-when-elided="true" name="txt_credits" style="-unity-text-align: upper-center; margin-top: 96px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

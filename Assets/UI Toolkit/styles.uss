@@ -1,0 +1,76 @@
+:root {
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+}
+
+.tooltip {
+    transition-property: bottom, opacity;
+    transition-timing-function: ease-out;
+    transition-duration: 150ms;
+    bottom: 0;
+    opacity: 0;
+    font-size: 20px;
+    margin: 0;
+    padding: 2px;
+}
+
+:hover > .tooltip {
+    bottom: 250%;
+    opacity: 0.8;
+}
+
+.title {
+    font-size: 70px;
+    -unity-font-style: bold-and-italic;
+    -unity-text-align: middle-center;
+    -unity-font-definition: url('project://database/Assets/Fonts/DIGITALDREAM%20SDF.asset?fileID=11400000&guid=dad98d2a0c907b546bda2f71c92e80c9&type=2#DIGITALDREAM SDF');
+}
+
+.darkener {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.menu-button {
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding: 0;
+    transition-property: color, border-color, opacity;
+    transition-timing-function: ease;
+    transition-duration: 50ms;
+    border-bottom-color: rgba(255, 255, 255, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 2px;
+    transform-origin: left;
+    opacity: 0.8;
+    -unity-font-style: bold;
+    -unity-text-align: middle-left;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.menu-button:hover {
+    opacity: 1;
+    border-bottom-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.menu-button:focus {
+    opacity: 1;
+    border-bottom-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.menu-button:active {
+    opacity: 1;
+    color: rgb(44, 168, 29);
+    border-bottom-color: rgb(44, 168, 29);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.menu-button-selected {
+    opacity: 1;
+    color: rgb(44, 168, 29);
+    border-bottom-color: rgb(44, 168, 29);
+    background-color: rgba(0, 0, 0, 0);
+}

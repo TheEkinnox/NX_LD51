@@ -17,7 +17,7 @@ MonoBehaviour:
   isPassive: 1
   speed: 0
   duration: 10
-  collisionDamage: 5
+  collisionDamage: 2
   contactFilter:
     useTriggers: 0
     useLayerMask: 1

@@ -8,6 +8,6 @@ namespace Assets.Scripts
         public float secPerPlayerConf = 10;
         public int rejuvenateCount = 3;
         public int ageStep = 10;
-        public PlayerConfig[] playerConfigs;
+        public CharacterConfig[] playerConfigs;
     }
 }

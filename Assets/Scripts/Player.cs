@@ -4,87 +4,38 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Player : MonoBehaviour, IDamageable
+    public class Player : Character
     {
         private float _nextAgeStepTime = 0;
 
         [SerializeField] private GameConfig gameConfig;
-        [SerializeField] private Animator animator;
-        [SerializeField] private AudioSource audioSource;
-        [SerializeField] private Rigidbody2D rb2d;
-        [SerializeField] private Transform projectileSpawn;
 
         private int _configIndex = 0;
-        private Vector2 _input;
-        private Vector2 _lastInput;
-        private int _health = 1;
-        private bool _isDead = false;
 
         public bool IsAging
         {
             get;
             private set;
         }
-        public bool IsDead
+
+        public override CharacterConfig CurrentConfig => gameConfig.playerConfigs[_configIndex];
+
+        protected override void OnEnable()
         {
-            get => _isDead;
-            private set
-            {
-                _isDead = value;
-                animator.SetBool(AnimVars.IsDead, _isDead);
-            }
-        }
-
-        public int Health
-        {
-            get => _health;
-            private set
-            {
-                _health = Mathf.Max(value, 0);
-
-                if (_health == 0)
-                    StartCoroutine(Die());
-            }
-        }
-
-        public PlayerConfig CurrentConfig => gameConfig.playerConfigs[_configIndex];
-        public Animator Animator => animator;
-        public AudioSource AudioSource => audioSource;
-        public Rigidbody2D Rigidbody => rb2d;
-        public Transform ProjectileSpawn => projectileSpawn;
-        public Vector2 LastInput => _lastInput;
-
-        void OnEnable()
-        {
-            if (!animator)
-                throw new MissingComponentException("Missing player animator");
-
-            if (!audioSource)
-                throw new MissingComponentException("Missing player audio source");
-
-            if (!rb2d)
-                throw new MissingComponentException("Missing player rigidbody");
-
-            if (!projectileSpawn)
-                throw new MissingComponentException("Missing player projectie spawn point");
+            base.OnEnable();
 
             IsAging = false;
-            IsDead = false;
-
-            GetComponent<SpriteRenderer>().color = Color.white;
-
-            Debug.Log("Awake");
 
             StartCoroutine(SetConfig(0));
         }
 
         void Update()
         {
-            _input = Vector2.zero;
+            direction = Vector2.zero;
 
             if (IsAging || IsDead)
             {
-                rb2d.velocity = Vector2.zero;
+                Rigidbody.velocity = Vector2.zero;
                 return;
             }
 
@@ -93,21 +44,27 @@ namespace Assets.Scripts
 
             if (!IsAging && !IsDead)
             {
-                HandleInputs();
+                HandleMovement();
                 HandleAnimations();
             }
         }
 
-        void HandleInputs()
+        protected override void HandleMovement()
         {
+            if (IsFrozen)
+            {
+                Rigidbody.velocity = Vector2.zero;
+                return;
+            }
+
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-                _input.y = 1;
+                direction.y = 1;
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-                _input.x = -1;
+                direction.x = -1;
             if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-                _input.y = -1;
+                direction.y = -1;
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-                _input.x = 1;
+                direction.x = 1;
 
             bool spacePressed = Input.GetKeyDown(KeyCode.Space);
 
@@ -129,36 +86,19 @@ namespace Assets.Scripts
                 Rejuvenate();
 #endif
 
-            if (_input != Vector2.zero)
-                _lastInput = _input;
-
-            rb2d.velocity = _input.normalized * CurrentConfig.speed;
+            base.HandleMovement();
         }
 
-        void HandleAnimations()
+        public override void Damage(int damage)
         {
-            animator.SetBool(AnimVars.IsMoving, _input.x != 0 || _input.y != 0);
-            animator.SetBool(AnimVars.IsDead, IsDead);
-            animator.SetFloat(AnimVars.VelX, _input.x);
-            animator.SetFloat(AnimVars.VelY, _input.y);
-            animator.SetFloat(AnimVars.LastX, _lastInput.x);
-            animator.SetFloat(AnimVars.LastY, _lastInput.y);
+            if (!IsAging)
+                base.Damage(damage);
         }
 
-        public void Damage(int damage)
+        public override void Heal(int health)
         {
-            if (IsDead || IsAging)
-                return;
-
-            Health -= Mathf.Min(damage, Health);
-        }
-
-        public void Heal(int health)
-        {
-            if (IsDead || IsAging)
-                return;
-
-            Health += Mathf.Min(health, CurrentConfig.health - Health);
+            if (!IsAging)
+                base.Heal(health);
         }
 
         public void Rejuvenate()
@@ -169,27 +109,15 @@ namespace Assets.Scripts
             StartCoroutine(SetConfig(_configIndex - gameConfig.rejuvenateCount));
         }
 
-        IEnumerator Die()
+        protected override IEnumerator Die()
         {
-            IsDead = true;
-            Debug.Log("Dying");
-
-            if (CurrentConfig.deathSound)
-                audioSource.PlayOneShot(CurrentConfig.deathSound);
-
-            if (CurrentConfig.deathFx)
-            {
-                GameObject particle = Instantiate(CurrentConfig.deathFx, transform.position, transform.rotation);
-                ParticleSystem[] ps = particle.GetComponentsInChildren<ParticleSystem>();
-
-                Destroy(particle, ps.Max(p => p.main.duration));
-            }
+            yield return base.Die();
 
             if (!IsAging)
                 if (CurrentConfig.deathSound)
-                    yield return new WaitForSeconds(Mathf.Max(animator.GetCurrentAnimatorStateInfo(0).length, CurrentConfig.deathSound.length));
+                    yield return new WaitForSeconds(Mathf.Max(Animator.GetCurrentAnimatorStateInfo(0).length, CurrentConfig.deathSound.length));
                 else
-                    yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+                    yield return new WaitForSeconds(Animator.GetCurrentAnimatorStateInfo(0).length);
             else
                 yield return new WaitUntil(() => !IsAging);
 
@@ -207,7 +135,9 @@ namespace Assets.Scripts
                 yield break;
 
             IsAging = true;
-            _lastInput.y = -1;
+            
+            lastDirection.x = 0;
+            lastDirection.y = -1;
 
             int displayedAge = _configIndex * gameConfig.ageStep;
             int targetAge = index * gameConfig.ageStep;
@@ -219,12 +149,12 @@ namespace Assets.Scripts
 
                 _configIndex = index;
                 Health = CurrentConfig.health;
-                animator.runtimeAnimatorController = CurrentConfig.animController;
+                Animator.runtimeAnimatorController = CurrentConfig.animController;
 
-                animator.SetTrigger(AnimVars.Spawn);
+                Animator.SetTrigger(AnimVars.Spawn);
 
                 if (CurrentConfig.spawnSound)
-                    audioSource.PlayOneShot(CurrentConfig.spawnSound);
+                    AudioSource.PlayOneShot(CurrentConfig.spawnSound);
 
                 foreach (Ability ability in CurrentConfig.abilities)
                     ability.Init(this);
@@ -232,11 +162,11 @@ namespace Assets.Scripts
             else
                 StartCoroutine(Die());
 
-            float animDuration = animator.GetCurrentAnimatorStateInfo(0).length;
+            float animDuration = Animator.GetCurrentAnimatorStateInfo(0).length;
 
             AudioClip curSound = IsDead ? CurrentConfig.deathSound : CurrentConfig.spawnSound;
 
-            if (audioSource.isPlaying && curSound)
+            if (AudioSource.isPlaying && curSound)
                 animDuration = Mathf.Max(animDuration, curSound.length);
 
             float progress = displayedAge != targetAge ? 0 : animDuration;
