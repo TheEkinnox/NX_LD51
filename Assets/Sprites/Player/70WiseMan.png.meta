@@ -295,6 +295,174 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: 70WiseMan_0
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e8d097808e7a447815f02c54a15cc7
+      internalID: 1768954883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 70WiseMan_1
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 0
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22cd1291bcbccbf47ae1e55fb34d8c2f
+      internalID: -525370647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 70WiseMan_2
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 0
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84916a39183b5ca4fa756da665e1367f
+      internalID: -1511367516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 70WiseMan_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df0c2eaa2bef354da56e2c08d8df4a3
+      internalID: 857950219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 70WiseMan_4
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 0
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e43ab31722f9f4d98e371c2dadbc8f
+      internalID: -1862280825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 70WiseMan_5
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 0
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb78e11c8e3f914ebcb304cc0360eb5
+      internalID: 933773374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 70WiseMan_6
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd556d8d89e15cd4cbf7c90c30bdb887
+      internalID: -1939609388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 70WiseMan_7
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 0
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031805ecab8ec3c4cb6147acc5ba9b6a
+      internalID: -1261825862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -306,13 +474,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      70WiseMan_4: -1862280825
       70WiseMan_r1: 1822964614
       70WiseMan_u0: -1913418955
       70WiseMan_l0: -647435866
       70WiseMan_l1: 846095425
+      70WiseMan_2: -1511367516
+      70WiseMan_0: 1768954883
       70WiseMan_r0: -435052022
+      70WiseMan_3: 857950219
       70WiseMan_u1: 562650608
+      70WiseMan_6: -1939609388
+      70WiseMan_1: -525370647
+      70WiseMan_7: -1261825862
       70WiseMan_d1: -257902793
+      70WiseMan_5: 933773374
       70WiseMan_d0: 1817247902
   spritePackingTag: 
   pSDRemoveMatte: 0

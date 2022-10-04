@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cd81f99a0a293489a0f17911f35b72, type: 3}
   m_Name: 90YearsConfig
   m_EditorClassIdentifier: 
-  displayName: Grandpa
+  prefab: {fileID: 3935768667673039690, guid: 435ae0abc7f56474483031032ce565ec, type: 3}
+  displayName: Last Stand
   speed: 9
-  health: 3
+  health: 1
   spawnSound: {fileID: 0}
   deathSound: {fileID: 0}
   deathFx: {fileID: 0}
   animController: {fileID: 22100000, guid: 8f8a735769d1b7b4691c1016e483cfc9, type: 2}
   abilities:
-  - {fileID: 11400000, guid: bb2499aeb69e24246b379b3d452c764c, type: 2}
   - {fileID: 11400000, guid: 7e93b6cec96575d40944e99a69f57365, type: 2}
+  - {fileID: 11400000, guid: bb2499aeb69e24246b379b3d452c764c, type: 2}

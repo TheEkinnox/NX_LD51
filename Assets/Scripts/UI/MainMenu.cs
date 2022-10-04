@@ -70,7 +70,7 @@ namespace Assets.Scripts.UI
 
         private void Play()
         {
-            SceneManager.LoadSceneAsync("Dungeon");
+            SceneManager.LoadSceneAsync(Scenes.Dungeon);
         }
 
         private void ShowHelp()
@@ -109,11 +109,7 @@ namespace Assets.Scripts.UI
 
         private void ExitGame()
         {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.ExitPlaymode();
-#else
-            Application.Quit();
-#endif
+            Common.ExitGame();
         }
     }
 }

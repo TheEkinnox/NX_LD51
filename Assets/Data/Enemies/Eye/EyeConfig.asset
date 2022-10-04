@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147e11477d1b4684390867a4367db0cd, type: 3}
+  m_Name: EyeConfig
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4209989660508529027, guid: 966bd2d1892487f4886fcba13c09b5b1, type: 3}
+  displayName: Retinum
+  speed: 3
+  health: 1
+  spawnSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  deathFx: {fileID: 0}
+  animController: {fileID: 22100000, guid: 44e8cc81e2a98a14f804e146eebcb640, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: c325a4667d856d1448e51758667ee498, type: 2}
+  minDistToTarget: 0.2
+  maxDistToTarget: 6
+  targetContactFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 8
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0

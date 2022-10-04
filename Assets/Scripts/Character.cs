@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace Assets.Scripts
 
         protected Vector2 direction;
         protected Vector2 lastDirection;
+        protected List<Ability> curAbilities;
 
         private int _health = 1;
         private bool _isDead = false;
@@ -45,7 +47,7 @@ namespace Assets.Scripts
         public Animator Animator => animator;
         public AudioSource AudioSource => audioSource;
         public Rigidbody2D Rigidbody => rb2d;
-        public Transform ProjectileSpawn => projectileSpawn;
+        public Transform AbilitySpawn => projectileSpawn;
         public Vector2 LastDirection => lastDirection;
         public abstract CharacterConfig CurrentConfig { get; }
 
@@ -84,7 +86,7 @@ namespace Assets.Scripts
                 throw new MissingComponentException("Missing player projectie spawn point");
 
             IsDead = false;
-            _freezeEndTime = Time.time;
+            _freezeEndTime = 0;
 
             GetComponent<SpriteRenderer>().color = Color.white;
 
@@ -94,7 +96,11 @@ namespace Assets.Scripts
         public virtual void Damage(int damage)
         {
             if (!IsDead)
+            {
                 Health -= Mathf.Min(damage, Health);
+                Animator.SetTrigger(AnimVars.Hurt);
+                Debug.Log($"Hurt character {name}");
+            }
         }
         
         public virtual void Heal(int health)
@@ -118,6 +124,9 @@ namespace Assets.Scripts
 
         protected virtual void HandleMovement()
         {
+            if (!CurrentConfig)
+                return;
+
             direction.Normalize();
 
             if (direction != Vector2.zero)

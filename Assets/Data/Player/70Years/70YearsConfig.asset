@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cd81f99a0a293489a0f17911f35b72, type: 3}
   m_Name: 70YearsConfig
   m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
   displayName: Wise Man
   speed: 4.5
-  health: 8
+  health: 2
   spawnSound: {fileID: 0}
   deathSound: {fileID: 0}
   deathFx: {fileID: 0}
   animController: {fileID: 22100000, guid: abdf1628a29058948a0111aca81e06b6, type: 2}
-  abilities: []
+  abilities:
+  - {fileID: 11400000, guid: 2b403ee7643cc934d99ba5aaa1a7d251, type: 2}

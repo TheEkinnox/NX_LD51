@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
+using UnityEngine.TextCore.Text;
 
 namespace Assets.Scripts
 {
@@ -11,6 +15,8 @@ namespace Assets.Scripts
 
         private Projectile _ability;
         private Character _caster;
+
+        private List<Collider2D> _colliders;
 
         private void Awake()
         {
@@ -32,31 +38,46 @@ namespace Assets.Scripts
             _ability = ability;
             _caster = caster;
 
-            Vector3 force = _caster.LastDirection * _ability.throwSpeed + _caster.Rigidbody.velocity;
+            float throwSpeed = _ability.throwSpeed + _caster.Rigidbody.velocity.magnitude;
+            Vector3 force = _caster.LastDirection * throwSpeed;
 
-            renderer.sortingOrder = _caster.LastDirection.y > 0 ? -1 : 1;
+            renderer.sortingOrder = _caster.LastDirection.y > 0 ? 0 : 1;
             rb2d.AddForce(force, ForceMode2D.Impulse);
+
+            Destroy(gameObject, _ability.range / throwSpeed);
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void FixedUpdate()
         {
-            if (_ability && _caster && other && other.enabled && other.gameObject != _caster.gameObject)
+            if (!_caster || !_ability)
+                return;
+
+            if (_colliders == null)
+                _colliders = new List<Collider2D>();
+
+            int colCount = rb2d.OverlapCollider(_ability.contactFilter, _colliders);
+
+            Collider2D col;
+            IDamageable target;
+            bool collided = false;
+
+            for (int i = 0; i < colCount; i++)
             {
-                IDamageable target = other.gameObject.GetComponent<IDamageable>();
+                col = _colliders[i];
 
-                if (target != null)
+                if (!col || !col.enabled || col.isTrigger || col.gameObject == _caster.gameObject ||
+                    (_caster is Enemy && col.GetComponent<Enemy>()) ||
+                    (_caster is Player && col.GetComponent<Player>()))
+                    continue;
+
+                collided = true;
+
+                if (Mathf.Abs(_ability.damage) > 0 && (target = col.GetComponent<IDamageable>()) != null)
                     target.Damage(_ability.damage);
-
-                if (_ability.breakOnContact)
-                    Destroy(gameObject);
-
-                Debug.Log("Collision");
             }
-        }
 
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            OnTriggerEnter2D(collision.otherCollider);
+            if (collided && _ability.breakOnContact)
+                Destroy(gameObject);
         }
 
         private void OnDestroy()

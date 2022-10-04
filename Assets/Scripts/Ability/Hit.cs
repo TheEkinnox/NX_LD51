@@ -22,9 +22,12 @@ namespace Assets.Scripts
         {
             if (base.Use())
             {
+                if (_colliders == null)
+                    _colliders = new List<Collider2D>();
+
                 Vector2 charPos = character.transform.position;
-                int colCount = Physics2D.OverlapCircle((Vector2)character.transform.position, range, contactFilter, _colliders);
-                float maxAngle = (maxDegAngle % 360);
+                int colCount = Physics2D.OverlapCircle((Vector2)character.AbilitySpawn.position, range, contactFilter, _colliders);
+                float maxAngle = maxDegAngle % 360;
 
                 Collider2D col;
                 IDamageable target;
@@ -36,7 +39,9 @@ namespace Assets.Scripts
                     col = _colliders[i];
                     dirToCol = ((Vector2)col.transform.position - charPos).normalized;
 
-                    if (!col || !col.enabled || col.gameObject == character.gameObject || (maxAngle > 0 && Vector2.Angle(character.LastDirection.normalized, dirToCol) > maxAngle))
+                    if (!col || !col.enabled || col.gameObject == character.gameObject || (maxAngle > 0 && Vector2.Angle(character.LastDirection.normalized, dirToCol) > maxAngle) ||
+                        (character is Enemy && col.GetComponent<Enemy>()) ||
+                        (character is Player && col.GetComponent<Player>()))
                         continue;
 
                     if (Mathf.Abs(damage) > 0 && (target = col.GetComponent<IDamageable>()) != null)

@@ -13,9 +13,9 @@ namespace Assets.Scripts.DunGen
         public virtual void Randomize()
         {
             if (sprites == null || sprites.Length == 0)
-                return;
-
-            spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
+                spriteRenderer.sprite = null;
+            else
+                spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
         }
 
         public virtual void Update() { }

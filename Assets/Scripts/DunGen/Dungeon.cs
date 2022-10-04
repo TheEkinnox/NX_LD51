@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.DunGen
 {
@@ -11,6 +12,11 @@ namespace Assets.Scripts.DunGen
         private int _curLevel;
         private Player _player;
         private bool _isLoading;
+        private float _curRoomTime;
+
+        public int CurLevel => _curLevel;
+        public float CurRoomTime => _curRoomTime;
+        public Player Player => _player;
 
         private void Start()
         {
@@ -30,6 +36,8 @@ namespace Assets.Scripts.DunGen
         {
             if (!_isLoading && (!_curRoom || _curRoom.IsComplete))
                 StartCoroutine(Generate());
+
+            _curRoomTime += Time.deltaTime;
         }
 
         private IEnumerator Generate()
@@ -38,6 +46,8 @@ namespace Assets.Scripts.DunGen
                 yield break;
 
             _isLoading = true;
+
+            Time.timeScale = 0;
 
             yield return Common.FadeOut(_config.fadeDuration);
 
@@ -53,7 +63,7 @@ namespace Assets.Scripts.DunGen
 
             _curRoom = instance.GetComponent<Room>();
 
-            _curRoom.Generate((int)_config.enemiesCountCurve.Evaluate(_curLevel));
+            _curRoom.Generate((int)(_config.minEnemiesCount + (_config.maxEnemiesCount - _config.minEnemiesCount) * _config.enemiesCountCurve.Evaluate(Mathf.Clamp(_curLevel / 5, 0, 1))));
 
             if (!_player)
             {
@@ -69,7 +79,10 @@ namespace Assets.Scripts.DunGen
 
             yield return Common.FadeIn(_config.fadeDuration);
 
+            Time.timeScale = 1;
+
             _curLevel++;
+            _curRoomTime = 0;
             _isLoading = false;
         }
     }

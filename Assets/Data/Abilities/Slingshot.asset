@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slingshot
   m_EditorClassIdentifier: 
   sfx: {fileID: 8300000, guid: bff8e2d1178284b4a9696bfa1260c46a, type: 3}
-  coolDown: 0
+  coolDown: 1
   freezeDuration: 0
   isPassive: 0
   damage: 1

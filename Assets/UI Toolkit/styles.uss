@@ -47,6 +47,7 @@
     -unity-font-style: bold;
     -unity-text-align: middle-left;
     background-color: rgba(0, 0, 0, 0);
+    font-size: 24px;
 }
 
 .menu-button:hover {

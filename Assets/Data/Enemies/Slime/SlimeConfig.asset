@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147e11477d1b4684390867a4367db0cd, type: 3}
+  m_Name: SlimeConfig
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4209989660508529027, guid: 966bd2d1892487f4886fcba13c09b5b1, type: 3}
+  displayName: Slimy
+  speed: 1.5
+  health: 3
+  spawnSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  deathFx: {fileID: 0}
+  animController: {fileID: 22100000, guid: ae596cce3ca9dfa4ea232dfa61be1a09, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: 78dc93ae27f6d5645bc44136821406c4, type: 2}
+  minDistToTarget: 3
+  maxDistToTarget: 8
+  targetContactFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 8
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0

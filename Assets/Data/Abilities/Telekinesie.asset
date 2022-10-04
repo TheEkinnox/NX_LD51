@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c040df77a4fdc7445a9f08995064d336, type: 3}
   m_Name: Telekinesie
   m_EditorClassIdentifier: 
-  sfx: {fileID: 0}
+  sfx: {fileID: 8300000, guid: d5710bf4650a7f34fb1ffeefb175cf69, type: 3}
   coolDown: 0.75
+  freezeDuration: 0.2
   isPassive: 0
   damage: 2
   range: 5
@@ -29,7 +30,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 119
+      m_Bits: 127
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0

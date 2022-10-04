@@ -1,6 +1,7 @@
+using Assets.Scripts.UI;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
@@ -17,6 +18,14 @@ namespace Assets.Scripts
             get;
             private set;
         }
+
+        public string DisplayedAge
+        {
+            get;
+            private set;
+        }
+
+        public float TimeBeforeAging => IsDead || IsAging ? 0 : _nextAgeStepTime - Time.time;
 
         public override CharacterConfig CurrentConfig => gameConfig.playerConfigs[_configIndex];
 
@@ -42,7 +51,7 @@ namespace Assets.Scripts
             if (Time.time >= _nextAgeStepTime)
                 StartCoroutine(SetConfig(_configIndex + 1));
 
-            if (!IsAging && !IsDead)
+            if (!IsAging && !IsDead && !HudManager.IsPaused)
             {
                 HandleMovement();
                 HandleAnimations();
@@ -68,7 +77,7 @@ namespace Assets.Scripts
 
             bool spacePressed = Input.GetKeyDown(KeyCode.Space);
 
-            foreach (Ability ability in CurrentConfig.abilities)
+            foreach (Ability ability in curAbilities)
                 if (ability.isPassive || (!ability.isPassive && spacePressed))
                     ability.Use();
 
@@ -124,6 +133,12 @@ namespace Assets.Scripts
             yield return Common.waitFrame;
 
             enabled = false;
+
+            yield return Common.FadeOut(1);
+
+            SceneManager.LoadSceneAsync(Scenes.Dungeon);
+
+            yield return Common.FadeIn(1);
         }
 
         IEnumerator SetConfig(int index)
@@ -144,8 +159,20 @@ namespace Assets.Scripts
 
             if (index < gameConfig.playerConfigs.Length)
             {
-                foreach (Ability ability in CurrentConfig.abilities)
-                    ability.Disable();
+                if (curAbilities != null)
+                {
+                    foreach (Ability ability in curAbilities)
+                    {
+                        ability.Disable();
+                        ScriptableObject.Destroy(ability);
+                    }
+
+                    curAbilities.Clear();
+                }
+                else
+                {
+                    curAbilities = new System.Collections.Generic.List<Ability>();
+                }
 
                 _configIndex = index;
                 Health = CurrentConfig.health;
@@ -157,7 +184,13 @@ namespace Assets.Scripts
                     AudioSource.PlayOneShot(CurrentConfig.spawnSound);
 
                 foreach (Ability ability in CurrentConfig.abilities)
-                    ability.Init(this);
+                {
+                    if (!ability)
+                        continue;
+
+                    curAbilities.Add(Instantiate(ability));
+                    curAbilities[curAbilities.Count - 1].Init(this);
+                }
             }
             else
                 StartCoroutine(Die());
@@ -174,6 +207,8 @@ namespace Assets.Scripts
             while (progress < animDuration)
             {
                 Debug.Log($"Cur. Age : {displayedAge} y/o");
+
+                DisplayedAge = $"{displayedAge} y/o";
                 displayedAge = (int) Mathf.Lerp(displayedAge, targetAge, progress);
 
                 yield return Common.waitFrame;
@@ -182,6 +217,7 @@ namespace Assets.Scripts
             }
 
             Debug.Log($"New config : {CurrentConfig.displayName}");
+            DisplayedAge = targetAge == 0 ? CurrentConfig.displayName : $"{CurrentConfig.displayName} ({targetAge} y/o)";
 
             if (!IsDead)
                 _nextAgeStepTime = Time.time + gameConfig.secPerPlayerConf;

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4209989659320993172}
-  m_Layer: 3
-  m_Name: ProjectileSpawn
+  m_Layer: 0
+  m_Name: AbilitySpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,9 +46,9 @@ GameObject:
   - component: {fileID: 4209989660508529028}
   - component: {fileID: 4209989660508529029}
   - component: {fileID: 4209989660508529030}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Enemy
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,9 +108,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1902711085
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2099029227, guid: 09b87759680d1124f80a4a68c24c0c8d, type: 3}
+  m_Sprite: {fileID: -2044550971, guid: 05ead5769b6e92d4480cb33377ff8749, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,7 +131,7 @@ Animator:
   m_GameObject: {fileID: 4209989660508529027}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5120cac2a469d6244a4c87311c19d60b, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -254,7 +254,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.6875}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.5, y: 0.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -299,7 +299,5 @@ MonoBehaviour:
   animator: {fileID: 4209989660508529025}
   audioSource: {fileID: 4209989660508529051}
   rb2d: {fileID: 4209989660508529029}
-  projectileSpawn: {fileID: 4209989660508529031}
+  projectileSpawn: {fileID: 4209989659320993172}
   _spriteRenderer: {fileID: 4209989660508529024}
-  minDistToTarget: 1
-  maxDistToTarget: 5

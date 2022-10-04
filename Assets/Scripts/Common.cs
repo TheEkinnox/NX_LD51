@@ -40,7 +40,9 @@ namespace Assets.Scripts
             duration = Mathf.Abs(duration);
 
             float originalTimeScale = Time.timeScale;
-            Time.timeScale = 0;
+
+            if (originalTimeScale != 0)
+                Time.timeScale = 0;
 
             float timer = duration;
 
@@ -53,7 +55,8 @@ namespace Assets.Scripts
                 timer -= Time.unscaledDeltaTime;
             }
 
-            Time.timeScale = originalTimeScale;
+            if (originalTimeScale != 0)
+                Time.timeScale = originalTimeScale;
         }
 
         public static IEnumerator FadeOut(float duration)
@@ -61,7 +64,9 @@ namespace Assets.Scripts
             duration = Mathf.Abs(duration);
 
             float originalTimeScale = Time.timeScale;
-            Time.timeScale = 0;
+            
+            if (originalTimeScale != 0)
+                Time.timeScale = 0;
 
             float timer = 0;
 
@@ -74,7 +79,17 @@ namespace Assets.Scripts
                 timer += Time.unscaledDeltaTime;
             }
 
-            Time.timeScale = originalTimeScale;
+            if (originalTimeScale != 0)
+                Time.timeScale = originalTimeScale;
+        }
+
+        internal static void ExitGame()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.ExitPlaymode();
+#else
+            Application.Quit();
+#endif
         }
     }
 }

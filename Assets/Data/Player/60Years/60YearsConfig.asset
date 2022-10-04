@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cd81f99a0a293489a0f17911f35b72, type: 3}
   m_Name: 60YearsConfig
   m_EditorClassIdentifier: 
+  prefab: {fileID: 3935768667673039690, guid: 435ae0abc7f56474483031032ce565ec, type: 3}
   displayName: Retired
   speed: 4.5
-  health: 8
+  health: 2
   spawnSound: {fileID: 0}
   deathSound: {fileID: 0}
   deathFx: {fileID: 0}

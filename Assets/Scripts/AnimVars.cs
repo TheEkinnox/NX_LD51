@@ -6,7 +6,7 @@ namespace Assets.Scripts
     {
         internal static readonly int Spawn = Animator.StringToHash("spawn");
         internal static readonly int Ability = Animator.StringToHash("ability");
-        internal static readonly int Exit = Animator.StringToHash("exit");
+        internal static readonly int Hurt = Animator.StringToHash("hurt");
         internal static readonly int IsMoving = Animator.StringToHash("isMoving");
         internal static readonly int IsDead = Animator.StringToHash("isDead");
         internal static readonly int VelX = Animator.StringToHash("velX");

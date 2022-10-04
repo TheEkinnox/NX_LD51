@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cd81f99a0a293489a0f17911f35b72, type: 3}
   m_Name: NewBornConfig
   m_EditorClassIdentifier: 
+  prefab: {fileID: 3935768667673039690, guid: 435ae0abc7f56474483031032ce565ec, type: 3}
   displayName: New Born
   speed: 9
   health: 1
   spawnSound: {fileID: 8300000, guid: b7af54b1bfd5d924199c6c5aef428aa7, type: 3}
   deathSound: {fileID: 8300000, guid: 073e12282f737cf4996fe2c4de846d3b, type: 3}
+  deathFx: {fileID: 0}
   animController: {fileID: 9100000, guid: 5120cac2a469d6244a4c87311c19d60b, type: 2}
   abilities:
   - {fileID: 11400000, guid: 7af689930de3415429ab78f49143fe3c, type: 2}

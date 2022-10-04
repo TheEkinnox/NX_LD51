@@ -16,7 +16,7 @@ MonoBehaviour:
   coolDown: 0.5
   freezeDuration: 0.2
   isPassive: 0
-  damage: 4
+  damage: 3
   range: 1.5
   knockBackForce: 2
   knockBackDuration: 0.15
@@ -30,7 +30,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 119
+      m_Bits: 127
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0

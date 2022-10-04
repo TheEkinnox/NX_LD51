@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -11,17 +12,19 @@ namespace Assets.Scripts
         public int collisionDamage = 0;
         public ContactFilter2D contactFilter;
 
-        private Collider2D[] _colliders;
+        private List<Collider2D> _colliders;
 
         public override bool Use()
         {
-            if (base.Use())
-            {
-                character.StartCoroutine(DashCoroutine());
-                return true;
-            }
+            if (!base.Use())
+                return false;
 
-            return false;
+            if (_colliders == null)
+                _colliders = new List<Collider2D>();
+
+            character.StartCoroutine(DashCoroutine());
+            return true;
+
         }
 
         private IEnumerator DashCoroutine()
@@ -39,7 +42,9 @@ namespace Assets.Scripts
                     int colCount = character.Rigidbody.OverlapCollider(contactFilter, _colliders);
 
                     for (int i = 0; i < colCount; i++)
-                        if (_colliders[i] && _colliders[i].enabled && _colliders[i].gameObject != character.gameObject)
+                        if (_colliders[i] && _colliders[i].enabled && _colliders[i].gameObject != character.gameObject &&
+                    !(character is Enemy && _colliders[i].GetComponent<Enemy>()) &&
+                    !(character is Player && _colliders[i].GetComponent<Player>()))
                             _colliders[i].GetComponent<IDamageable>()?.Damage(collisionDamage);
                 }
 

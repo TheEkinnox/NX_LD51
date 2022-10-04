@@ -23,7 +23,9 @@ namespace Assets.Scripts.DunGen
         private void Awake()
         {
             _tiles = GetComponentsInChildren<RoomTile>();
-            
+            _enemySpawnPoints = new List<EnemySpawnerTile>();
+
+
             if (ExitTiles == null)
                 ExitTiles = new List<ExitTile>();
             else
@@ -39,6 +41,9 @@ namespace Assets.Scripts.DunGen
                         Debug.Log($"Exiting room {name}");
                     };
                 }
+
+                if (_tiles[i] is EnemySpawnerTile est && est)
+                    _enemySpawnPoints.Add(est);
             }
         }
 
@@ -56,9 +61,7 @@ namespace Assets.Scripts.DunGen
             {
                 tile.Randomize();
 
-                if (tile is EnemySpawnerTile est && est)
-                    _enemySpawnPoints.Add(est);
-                if (tile is SpawnerTile st)
+                if (tile is not EnemySpawnerTile && tile is SpawnerTile st)
                     st.StartSpawn();
             }
 

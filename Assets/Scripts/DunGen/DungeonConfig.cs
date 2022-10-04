@@ -6,6 +6,8 @@ namespace Assets.Scripts.DunGen
     public class DungeonConfig : ScriptableObject
     {
         public int roomCount = int.MaxValue;
+        public int minEnemiesCount = 1;
+        public int maxEnemiesCount = 10;
         public AnimationCurve enemiesCountCurve;
         public GameObject playerPrefab;
         public float fadeDuration = 1;

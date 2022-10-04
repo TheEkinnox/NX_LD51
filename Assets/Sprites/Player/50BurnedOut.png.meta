@@ -128,169 +128,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 50BurnedOut_d0
+      name: 50BurnedOut_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74a7533c3b02da5429b1db1216ddce3e
-      internalID: 1283548723
+      spriteID: f75e6f887ac12be4c91a19c95229fb14
+      internalID: 1663897309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 50BurnedOut_d1
+      name: 50BurnedOut_1
       rect:
         serializedVersion: 2
-        x: 19
+        x: 16
         y: 0
-        width: 10
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3827df6a600978749ac47d52aac0235e
-      internalID: -1494538210
+      spriteID: 64dd20ed13fe48c40b00bd2c14b3d4e6
+      internalID: 127407718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 50BurnedOut_u0
+      name: 50BurnedOut_2
       rect:
         serializedVersion: 2
-        x: 35
+        x: 32
         y: 0
-        width: 10
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32c387ed49c8f6c4ab6747ae56da5c1c
-      internalID: -919862068
+      spriteID: ccd125a41fa994f42ac5f41380644537
+      internalID: -429996697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 50BurnedOut_u1
+      name: 50BurnedOut_3
       rect:
         serializedVersion: 2
-        x: 50
+        x: 48
         y: 0
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64b9718199f425f43a05bd7cd5e3bcee
-      internalID: 984111413
+      spriteID: a6d47bc11d6b23a4ba560fc10ca7368c
+      internalID: -1248010036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 50BurnedOut_l0
+      name: 50BurnedOut_4
       rect:
         serializedVersion: 2
-        x: 68
+        x: 64
         y: 0
-        width: 8
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d912a4e1ce1970941b20837277ef6c1f
-      internalID: -576595881
+      spriteID: 79166cad776166c4fbb700fee6d2dc8c
+      internalID: 1346408473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 50BurnedOut_l1
+      name: 50BurnedOut_5
       rect:
         serializedVersion: 2
-        x: 84
+        x: 80
         y: 0
-        width: 8
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64ea5c22d92fd5841bdf2a96faa10b0c
-      internalID: 1066039713
+      spriteID: 04522a095252f9943ab76a25c356cc7c
+      internalID: -333043674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 50BurnedOut_r0
+      name: 50BurnedOut_6
       rect:
         serializedVersion: 2
-        x: 100
+        x: 96
         y: 0
-        width: 8
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1375e1e64dccfba42962d68ddaacacc0
-      internalID: 1348976502
+      spriteID: 501c48799bbfccd4092dc52f30ca72ad
+      internalID: 935819755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 50BurnedOut_r1
+      name: 50BurnedOut_7
       rect:
         serializedVersion: 2
-        x: 116
+        x: 112
         y: 0
-        width: 8
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71cb1d33e9bb8be41989b2222eb18755
-      internalID: -833325630
+      spriteID: 0b361ae0aa8b09748978f52cbc6d6282
+      internalID: 402567753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50BurnedOut_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8694b4d32260042915ed2d3d63c134
+      internalID: 1544710712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50BurnedOut_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21e05d2a63deaf4ab31e2d1882fd771
+      internalID: -752751477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50BurnedOut_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5aa9cc694cd34f4f892e7d9b8acc85b
+      internalID: -1660075945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50BurnedOut_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d5e26a565092441a9f6d6a8ae2c86c
+      internalID: -55586273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50BurnedOut_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c20451e4dcc0f84891b38bf85b62e1e
+      internalID: -793476580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50BurnedOut_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f985f49f7272a5c4fbe8e92687acadc1
+      internalID: -1644625881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50BurnedOut_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620561946e0ad354b91a0bc14d03f73b
+      internalID: 666094339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50BurnedOut_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41db63861d9710d49a1f78a17327f478
+      internalID: -1989256017
       vertices: []
       indices: 
       edges: []
@@ -306,14 +474,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      50BurnedOut_l1: 1066039713
-      50BurnedOut_u1: 984111413
-      50BurnedOut_d1: -1494538210
-      50BurnedOut_r1: -833325630
-      50BurnedOut_r0: 1348976502
-      50BurnedOut_d0: 1283548723
-      50BurnedOut_l0: -576595881
-      50BurnedOut_u0: -919862068
+      50BurnedOut_3: -1248010036
+      50BurnedOut_15: -1989256017
+      50BurnedOut_7: 402567753
+      50BurnedOut_13: -1644625881
+      50BurnedOut_10: -1660075945
+      50BurnedOut_9: -752751477
+      50BurnedOut_11: -55586273
+      50BurnedOut_2: -429996697
+      50BurnedOut_14: 666094339
+      50BurnedOut_6: 935819755
+      50BurnedOut_5: -333043674
+      50BurnedOut_1: 127407718
+      50BurnedOut_12: -793476580
+      50BurnedOut_4: 1346408473
+      50BurnedOut_0: 1663897309
+      50BurnedOut_8: 1544710712
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

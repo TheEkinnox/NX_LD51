@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cd81f99a0a293489a0f17911f35b72, type: 3}
   m_Name: 30YearsConfig
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 3935768667673039690, guid: 435ae0abc7f56474483031032ce565ec, type: 3}
   displayName: Gym Bro
   speed: 6
-  health: 10
+  health: 6
   spawnSound: {fileID: 0}
   deathSound: {fileID: 0}
   deathFx: {fileID: 0}

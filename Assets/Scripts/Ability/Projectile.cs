@@ -11,6 +11,7 @@ namespace Assets.Scripts
         public GameObject projectilePrefab;
         public bool breakOnContact;
         public GameObject breakFx;
+        public ContactFilter2D contactFilter;
 
         public override bool Use()
         {
@@ -18,7 +19,7 @@ namespace Assets.Scripts
             {
                 float angle = Mathf.Atan2(character.LastDirection.x, -character.LastDirection.y) * Mathf.Rad2Deg;
 
-                GameObject instance = Instantiate(projectilePrefab, character.ProjectileSpawn.position, Quaternion.Euler(new Vector3(0, 0, angle)));
+                GameObject instance = Instantiate(projectilePrefab, character.AbilitySpawn.position, Quaternion.Euler(new Vector3(0, 0, angle)));
 
                 ProjectileBehaviour proj = instance.GetComponent<ProjectileBehaviour>();
 
@@ -29,7 +30,6 @@ namespace Assets.Scripts
                 }
 
                 proj.Init(this, character);
-                Destroy(instance, range / throwSpeed);
 
                 return true;
             }

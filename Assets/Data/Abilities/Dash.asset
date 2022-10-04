@@ -14,6 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfx: {fileID: 8300000, guid: bff8e2d1178284b4a9696bfa1260c46a, type: 3}
   coolDown: 2.5
+  freezeDuration: 0
   isPassive: 0
-  speed: 15
-  duration: 0.1
+  speed: 20
+  duration: 0.15
+  collisionDamage: 0
+  contactFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
